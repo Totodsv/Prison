@@ -6,12 +6,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @IdClass(AffairePK.class)
 public class Affaire  {
-    private String nAffaire;
+    private String numAffaire;
     private String nomJuridiction;
     private Date dateFaits;
     private Collection<DetenuAffaire> detenuAffaires;
@@ -22,12 +23,12 @@ public class Affaire  {
 
     @Id
     @Column(name = "n_affaire", nullable = false, length = 10)
-    public String getnAffaire() {
-        return nAffaire;
+    public String getNumAffaire() {
+        return numAffaire;
     }
 
-    public void setnAffaire(String nAffaire) {
-        this.nAffaire = nAffaire;
+    public void setNumAffaire(String numAffaire) {
+        this.numAffaire = numAffaire;
     }
 
     @Id
@@ -55,14 +56,14 @@ public class Affaire  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Affaire affaire = (Affaire) o;
-        return Objects.equals(affaire, affaire.nAffaire) &&
+        return Objects.equals(affaire, affaire.numAffaire) &&
                 Objects.equals(nomJuridiction, affaire.nomJuridiction) &&
                 Objects.equals(dateFaits, affaire.dateFaits);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nAffaire, nomJuridiction, dateFaits);
+        return Objects.hash(numAffaire, nomJuridiction, dateFaits);
     }
 
     @OneToMany(mappedBy = "affaire")

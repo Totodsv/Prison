@@ -7,18 +7,18 @@ import java.sql.Date;
 import java.util.Objects;
 
 public class CondamnationPK implements Serializable {
-    private String nTypeDecision;
+    private String numTypeDecision;
     private String nEcrou;
     private Date dateDecision;
 
     @Column(name = "n_type_decision", nullable = false, length = 1)
     @Id
-    public String getnTypeDecision() {
-        return nTypeDecision;
+    public String getNumTypeDecision() {
+        return numTypeDecision;
     }
 
-    public void setnTypeDecision(String nTypeDecision) {
-        this.nTypeDecision = nTypeDecision;
+    public void setNumTypeDecision(String numTypeDecision) {
+        this.numTypeDecision = numTypeDecision;
     }
 
     @Column(name = "n_ecrou", nullable = false, length = 10)
@@ -46,13 +46,13 @@ public class CondamnationPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CondamnationPK that = (CondamnationPK) o;
-        return Objects.equals(nTypeDecision, that.nTypeDecision) &&
+        return Objects.equals(numTypeDecision, that.numTypeDecision) &&
                 Objects.equals(nEcrou, that.nEcrou) &&
                 Objects.equals(dateDecision, that.dateDecision);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nTypeDecision, nEcrou, dateDecision);
+        return Objects.hash(numTypeDecision, nEcrou, dateDecision);
     }
 }

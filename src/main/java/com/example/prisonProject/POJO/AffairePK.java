@@ -6,17 +6,17 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class AffairePK implements Serializable {
-    private String nAffaire;
+    private String numAffaire;
     private String nomJuridiction;
 
     @Column(name = "n_affaire", nullable = false, length = 10)
     @Id
-    public String getnAffaire() {
-        return nAffaire;
+    public String getNumAffaire() {
+        return numAffaire;
     }
 
-    public void setnAffaire(String nAffaire) {
-        this.nAffaire = nAffaire;
+    public void setNumAffaire(String numAffaire) {
+        this.numAffaire = numAffaire;
     }
 
     @Column(name = "nom_juridiction", nullable = false, length = 30)
@@ -34,12 +34,12 @@ public class AffairePK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AffairePK affairePK = (AffairePK) o;
-        return Objects.equals(nAffaire, affairePK.nAffaire) &&
+        return Objects.equals(numAffaire, affairePK.numAffaire) &&
                 Objects.equals(nomJuridiction, affairePK.nomJuridiction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nAffaire, nomJuridiction);
+        return Objects.hash(numAffaire, nomJuridiction);
     }
 }

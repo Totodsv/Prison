@@ -2,6 +2,7 @@ package com.example.prisonProject.POJO;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -9,7 +10,7 @@ import java.util.Objects;
 @IdClass(DetenuAffairePK.class)
 public class DetenuAffaire {
     private String nEcrou;
-    private String nAffaire;
+    private String numAffaire;
     private String nomJuridiction;
     private Detenu detenuByNEcrou;
     private Affaire affaire;
@@ -29,12 +30,12 @@ public class DetenuAffaire {
 
     @Id
     @Column(name = "n_affaire", nullable = false, length = 10)
-    public String getnAffaire() {
-        return nAffaire;
+    public String getNumAffaire() {
+        return numAffaire;
     }
 
-    public void setnAffaire(String nAffaire) {
-        this.nAffaire = nAffaire;
+    public void setNumAffaire(String numAffaire) {
+        this.numAffaire = numAffaire;
     }
 
     @Id
@@ -53,13 +54,13 @@ public class DetenuAffaire {
         if (o == null || getClass() != o.getClass()) return false;
         DetenuAffaire that = (DetenuAffaire) o;
         return Objects.equals(nEcrou, that.nEcrou) &&
-                Objects.equals(nAffaire, that.nAffaire) &&
+                Objects.equals(numAffaire, that.numAffaire) &&
                 Objects.equals(nomJuridiction, that.nomJuridiction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nEcrou, nAffaire, nomJuridiction);
+        return Objects.hash(nEcrou, numAffaire, nomJuridiction);
     }
 
     @ManyToOne
@@ -89,5 +90,11 @@ public class DetenuAffaire {
 
     public void setIncarcerations(Collection<Incarceration> incarcerations) {
         this.incarcerations = incarcerations;
+    }
+
+    public void ajouterIncarceration(Incarceration incarceration){
+        Collection<Incarceration> incarcerationsExistantes = this.getIncarcerations();
+        incarcerationsExistantes.add(incarceration);
+        this.setIncarcerations(incarcerationsExistantes);
     }
 }

@@ -12,6 +12,6 @@ import java.util.Collection;
 @Repository
 public interface AffaireRepository extends JpaRepository<Affaire, String> {
 
-    Affaire findAffaireBynAffaireAndNomJuridiction(String n_affaire, String nom_juridiction);
+    Affaire findAffaireByNumAffaireAndNomJuridiction(String n_affaire, String nom_juridiction);
 
 }

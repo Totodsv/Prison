@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @IdClass(CondamnationPK.class)
 public class Condamnation {
-    private String nTypeDecision;
+    private String numTypeDecision;
     private String nEcrou;
     private Date dateDecision;
     private Integer duree;
@@ -19,12 +19,12 @@ public class Condamnation {
 
     @Id
     @Column(name = "n_type_decision", nullable = false, length = 1)
-    public String getnTypeDecision() {
-        return nTypeDecision;
+    public String getNumTypeDecision() {
+        return numTypeDecision;
     }
 
-    public void setnTypeDecision(String nTypeDecision) {
-        this.nTypeDecision = nTypeDecision;
+    public void setNumTypeDecision(String numTypeDecision) {
+        this.numTypeDecision = numTypeDecision;
     }
 
     @Id
@@ -62,7 +62,7 @@ public class Condamnation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Condamnation that = (Condamnation) o;
-        return Objects.equals(nTypeDecision, that.nTypeDecision) &&
+        return Objects.equals(numTypeDecision, that.numTypeDecision) &&
                 Objects.equals(nEcrou, that.nEcrou) &&
                 Objects.equals(dateDecision, that.dateDecision) &&
                 Objects.equals(duree, that.duree);
@@ -70,7 +70,7 @@ public class Condamnation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nTypeDecision, nEcrou, dateDecision, duree);
+        return Objects.hash(numTypeDecision, nEcrou, dateDecision, duree);
     }
 
     @OneToOne

@@ -8,7 +8,7 @@ import java.util.Objects;
 @Table(name = "liberation_definitive", schema = "public", catalog = "Prison")
 @IdClass(LiberationDefinitivePK.class)
 public class LiberationDefinitive {
-    private String nTypeDecision;
+    private String numTypeDecision;
     private String nEcrou;
     private Date dateDecision;
     private Date dateLiberation;
@@ -18,12 +18,12 @@ public class LiberationDefinitive {
 
     @Id
     @Column(name = "n_type_decision", nullable = false, length = 1)
-    public String getnTypeDecision() {
-        return nTypeDecision;
+    public String getNumTypeDecision() {
+        return numTypeDecision;
     }
 
-    public void setnTypeDecision(String nTypeDecision) {
-        this.nTypeDecision = nTypeDecision;
+    public void setNumTypeDecision(String numTypeDecision) {
+        this.numTypeDecision = numTypeDecision;
     }
 
     @Id
@@ -61,7 +61,7 @@ public class LiberationDefinitive {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LiberationDefinitive that = (LiberationDefinitive) o;
-        return Objects.equals(nTypeDecision, that.nTypeDecision) &&
+        return Objects.equals(numTypeDecision, that.numTypeDecision) &&
                 Objects.equals(nEcrou, that.nEcrou) &&
                 Objects.equals(dateDecision, that.dateDecision) &&
                 Objects.equals(dateLiberation, that.dateLiberation);
@@ -69,7 +69,7 @@ public class LiberationDefinitive {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nTypeDecision, nEcrou, dateDecision, dateLiberation);
+        return Objects.hash(numTypeDecision, nEcrou, dateDecision, dateLiberation);
     }
 
     @OneToOne

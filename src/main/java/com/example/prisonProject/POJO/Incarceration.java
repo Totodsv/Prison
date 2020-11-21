@@ -10,6 +10,8 @@ public class Incarceration {
     private Date dateIncarceration;
     private DetenuAffaire detenuAffaire;
     private Motif motifByNMotif;
+    private String numAffaire;
+    private String nomJuridiction;
 
     public Incarceration(){}
 
@@ -48,7 +50,7 @@ public class Incarceration {
     }
 
     @ManyToOne
-    @JoinColumns({@JoinColumn(name = "n_ecrou", referencedColumnName = "n_ecrou", nullable = false, insertable = false, updatable = false), @JoinColumn(name = "n_affaire", referencedColumnName = "n_affaire", nullable = false, insertable = false, updatable = false), @JoinColumn(name = "nom_juridiction", referencedColumnName = "nom_juridiction", nullable = false, insertable = false, updatable = false)})
+    @JoinColumns({@JoinColumn(name = "n_ecrou", referencedColumnName = "n_ecrou", nullable = true, insertable = false, updatable = false), @JoinColumn(name = "n_affaire", referencedColumnName = "n_affaire", nullable = true, insertable = false, updatable = false), @JoinColumn(name = "nom_juridiction", referencedColumnName = "nom_juridiction", nullable = true, insertable = false, updatable = false)})
     public DetenuAffaire getDetenuAffaire() {
         return detenuAffaire;
     }
@@ -65,5 +67,23 @@ public class Incarceration {
 
     public void setMotifByNMotif(Motif motifByNMotif) {
         this.motifByNMotif = motifByNMotif;
+    }
+
+    @Column(name="n_affaire", nullable = true)
+    public String getNumAffaire() {
+        return numAffaire;
+    }
+
+    public void setNumAffaire(String numAffaire) {
+        this.numAffaire = numAffaire;
+    }
+
+    @Column(name="nom_juridiction", nullable = true)
+    public String getNomJuridiction() {
+        return nomJuridiction;
+    }
+
+    public void setNomJuridiction(String nomJuridiction) {
+        this.nomJuridiction = nomJuridiction;
     }
 }

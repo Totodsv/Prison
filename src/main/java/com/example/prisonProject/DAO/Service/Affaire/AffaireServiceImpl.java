@@ -15,7 +15,7 @@ public class AffaireServiceImpl implements AffaireService {
     @Override
     public Affaire createAffaire(String nAffaire, String nomJuridiction, Date dateFaits){
         Affaire a = new Affaire();
-        a.setnAffaire(nAffaire);
+        a.setNumAffaire(nAffaire);
         a.setNomJuridiction(nomJuridiction);
         a.setDateFaits(dateFaits);
 
@@ -24,12 +24,12 @@ public class AffaireServiceImpl implements AffaireService {
 
     @Override
     public Affaire readAffaire(String nAffaire, String nomJuridiction){
-        return affaireRepository.findAffaireBynAffaireAndNomJuridiction(nAffaire, nomJuridiction);
+        return affaireRepository.findAffaireByNumAffaireAndNomJuridiction(nAffaire, nomJuridiction);
     }
 
     @Override
     public Affaire updateAffaire(String nAffaire, String nomJuridiction, Date dateFaits){
-        Affaire a = affaireRepository.findAffaireBynAffaireAndNomJuridiction(nAffaire, nomJuridiction);
+        Affaire a = affaireRepository.findAffaireByNumAffaireAndNomJuridiction(nAffaire, nomJuridiction);
         a.setDateFaits(dateFaits);
 
         return affaireRepository.save(a);
@@ -37,7 +37,7 @@ public class AffaireServiceImpl implements AffaireService {
 
     @Override
     public void deleteAffaire(String nAffaire, String nomJuridiction) {
-        Affaire a = affaireRepository.findAffaireBynAffaireAndNomJuridiction(nAffaire, nomJuridiction);
+        Affaire a = affaireRepository.findAffaireByNumAffaireAndNomJuridiction(nAffaire, nomJuridiction);
         affaireRepository.delete(a);
     }
 }

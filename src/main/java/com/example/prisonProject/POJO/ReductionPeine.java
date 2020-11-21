@@ -8,7 +8,7 @@ import java.util.Objects;
 @Table(name = "reduction_peine", schema = "public", catalog = "Prison")
 @IdClass(ReductionPeinePK.class)
 public class ReductionPeine {
-    private String nTypeDecision;
+    private String numTypeDecision;
     private String nEcrou;
     private Date dateDecision;
     private Integer duree;
@@ -18,12 +18,12 @@ public class ReductionPeine {
 
     @Id
     @Column(name = "n_type_decision", nullable = false, length = 1)
-    public String getnTypeDecision() {
-        return nTypeDecision;
+    public String getNumTypeDecision() {
+        return numTypeDecision;
     }
 
-    public void setnTypeDecision(String nTypeDecision) {
-        this.nTypeDecision = nTypeDecision;
+    public void setNumTypeDecision(String numTypeDecision) {
+        this.numTypeDecision = numTypeDecision;
     }
 
     @Id
@@ -61,7 +61,7 @@ public class ReductionPeine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ReductionPeine that = (ReductionPeine) o;
-        return Objects.equals(nTypeDecision, that.nTypeDecision) &&
+        return Objects.equals(numTypeDecision, that.numTypeDecision) &&
                 Objects.equals(nEcrou, that.nEcrou) &&
                 Objects.equals(dateDecision, that.dateDecision) &&
                 Objects.equals(duree, that.duree);
@@ -69,7 +69,7 @@ public class ReductionPeine {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nTypeDecision, nEcrou, dateDecision, duree);
+        return Objects.hash(numTypeDecision, nEcrou, dateDecision, duree);
     }
 
     @OneToOne
