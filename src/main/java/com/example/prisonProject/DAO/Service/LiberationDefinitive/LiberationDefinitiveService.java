@@ -9,6 +9,6 @@ public interface LiberationDefinitiveService {
     LiberationDefinitive createLiberationDefinitive(String nTypeDecision, String nEcrou, Date dateDecision, Date dateLiberation);
     LiberationDefinitive readLiberationDefinitive(String nTypeDecision, String nEcrou, Date dateDecision);
     LiberationDefinitive updateLiberationDefinitive(String nTypeDecision, String nEcrou, Date dateDecision, Date dateLiberation);
-    void deleteJoueur(String nTypeDecision, String nEcrou, Date dateDecision);
+    void deleteLiberationDefinitive(String nEcrou, String nTypeDecision, Date dateDecision);
 
 }

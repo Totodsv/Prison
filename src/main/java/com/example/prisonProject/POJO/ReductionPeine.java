@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "reduction_peine", schema = "public", catalog = "Prison")
-@IdClass(ReductionPeinePK.class)
+@IdClass(DecisionPK.class)
 public class ReductionPeine {
     private String numTypeDecision;
     private String nEcrou;

@@ -9,5 +9,5 @@ public interface CondamnationService {
         Condamnation createCondamnation(String nTypeDecision, String nEcrou, Date dateDecision, Integer duree);
         Condamnation readCondamnation(String nTypeDecision, String nEcrou, Date dateDecision);
         Condamnation updateCondamnation(String nTypeDecision, String nEcrou, Date dateDecision, Integer duree);
-        void deleteJoueur(String nTypeDecision, String nEcrou, Date dateDecision);
+        void deleteCondmanation(String nTypeDecision, String nEcrou, Date dateDecision);
 }

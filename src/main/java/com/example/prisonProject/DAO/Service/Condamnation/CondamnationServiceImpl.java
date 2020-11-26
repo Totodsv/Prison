@@ -36,7 +36,7 @@ public class CondamnationServiceImpl implements CondamnationService {
     }
 
     @Override
-    public void deleteJoueur(String nTypeDecision, String nEcrou, Date dateDecision){
+    public void deleteCondmanation(String nTypeDecision, String nEcrou, Date dateDecision){
         Condamnation c = condamnationRepository.findCondamnationBynEcrouAndNumTypeDecisionAndDateDecision(nEcrou,nTypeDecision,dateDecision);
         condamnationRepository.delete(c);
     }

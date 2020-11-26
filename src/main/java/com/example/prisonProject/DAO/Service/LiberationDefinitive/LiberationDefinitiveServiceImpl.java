@@ -35,7 +35,7 @@ public class LiberationDefinitiveServiceImpl implements LiberationDefinitiveServ
     }
 
     @Override
-    public void deleteJoueur(String nTypeDecision, String nEcrou, Date dateDecision){
+    public void deleteLiberationDefinitive(String nEcrou, String nTypeDecision, Date dateDecision){
         LiberationDefinitive l = liberationDefinitiveRepository.findLiberationDefinitiveBynEcrouAndNumTypeDecisionAndDateDecision(nEcrou,nTypeDecision,dateDecision);
         liberationDefinitiveRepository.delete(l);
     }

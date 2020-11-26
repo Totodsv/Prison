@@ -63,7 +63,7 @@ public class Decision {
         return Objects.hash(numTypeDecision, nEcrou, dateDecision);
     }
 
-    @OneToOne(mappedBy = "decision")
+    @OneToOne(mappedBy = "decision", cascade = CascadeType.ALL)
     public Condamnation getCondamnation() {
         return condamnation;
     }
@@ -82,7 +82,7 @@ public class Decision {
         this.detenuByNEcrou = detenuByNEcrou;
     }
 
-    @OneToOne(mappedBy = "decision")
+    @OneToOne(mappedBy = "decision", cascade = CascadeType.ALL)
     public LiberationDefinitive getLiberationDefinitive() {
         return liberationDefinitive;
     }
@@ -91,7 +91,7 @@ public class Decision {
         this.liberationDefinitive = liberationDefinitive;
     }
 
-    @OneToOne(mappedBy = "decision")
+    @OneToOne(mappedBy = "decision", cascade = CascadeType.ALL)
     public ReductionPeine getReductionPeine() {
         return reductionPeine;
     }

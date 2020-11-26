@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@IdClass(CondamnationPK.class)
+@IdClass(DecisionPK.class)
 public class Condamnation {
     private String numTypeDecision;
     private String nEcrou;
@@ -16,6 +16,7 @@ public class Condamnation {
     public Condamnation(){
 
     }
+
 
     @Id
     @Column(name = "n_type_decision", nullable = false, length = 1)
