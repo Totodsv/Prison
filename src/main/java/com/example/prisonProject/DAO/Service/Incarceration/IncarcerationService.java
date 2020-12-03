@@ -12,4 +12,5 @@ public interface IncarcerationService {
     Incarceration readIncarceration(String nEcrou);
     Incarceration updateIncarceration(String nEcrou, Date dateIncarceration, String n_affaire, String nom_juridiction);
     void deleteIncarceration(String nEcrou);
+    List<Incarceration> readAllIncarcerations();
 }

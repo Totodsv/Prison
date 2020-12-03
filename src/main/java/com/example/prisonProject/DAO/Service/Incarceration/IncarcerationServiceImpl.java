@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.List;
 
 @Service
 public class IncarcerationServiceImpl implements IncarcerationService {
@@ -43,5 +44,10 @@ public class IncarcerationServiceImpl implements IncarcerationService {
     public void deleteIncarceration(String nEcrou){
         Incarceration i = incarcerationRepository.findIncarcerationBynEcrou(nEcrou);
         incarcerationRepository.delete(i);
+    }
+
+    @Override
+    public List<Incarceration> readAllIncarcerations(){
+        return incarcerationRepository.findAll();
     }
 }

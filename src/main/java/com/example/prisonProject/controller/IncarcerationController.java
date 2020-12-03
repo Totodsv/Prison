@@ -31,16 +31,16 @@ public class IncarcerationController {
 
     @PostMapping(value = "/createIncarceration")
     public Incarceration createIncarceration(HttpServletRequest request, @Valid Incarceration incarceration) {
-        Date dateDetenu = new Date(1997-1900, 12-1, 27);
-        Date dateIncarceration = new Date(2020-1900, 11-1, 28);
-        Date dateAffaire = new Date(2019-1900, 9-1, 25);
+        Date dateDetenu = new Date(1996-1900, 11-1, 18);
+        Date dateIncarceration = new Date(2019-1900, 11-1, 13);
+        Date dateAffaire = new Date(2019-1900, 7-1, 11);
 
-        Detenu detenu1 = detenuService.createDetenu("1965", "Thomas", "Brunel", dateDetenu, "Massy");
-        Affaire affaire = affaireService.createAffaire("45", "Lescar", dateAffaire);
+        Detenu detenu1 = detenuService.createDetenu("1966", "Julien", "Bercot", dateDetenu, "Nantes");
+        Affaire affaire = affaireService.createAffaire("46", "Pau", dateAffaire);
         DetenuAffaire detenuAffaire = detenuAffaireService.createDetenuAffaire(detenu1.getnEcrou(),affaire.getNumAffaire(),affaire.getNomJuridiction());
 
-        Motif motif = motifService.createMotif("02","détournement d'argent");
-        Incarceration incarcerationDetenu = incarcerationService.createIncarceration("1965",dateIncarceration, detenuAffaire,motif);
+        Motif motif = motifService.createMotif("12","abus de confiance");
+        Incarceration incarcerationDetenu = incarcerationService.createIncarceration("1966",dateIncarceration, detenuAffaire,motif);
         detenuAffaire.ajouterIncarceration(incarcerationDetenu);
         incarcerationService.updateIncarceration(incarcerationDetenu.getnEcrou(),incarcerationDetenu.getDateIncarceration(),detenuAffaire.getNumAffaire(),detenuAffaire.getNomJuridiction());
         return incarcerationDetenu;

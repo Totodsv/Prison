@@ -2,10 +2,12 @@ package com.example.prisonProject.DAO.Service.Condamnation;
 
 import com.example.prisonProject.DAO.Repository.CondamnationRepository;
 import com.example.prisonProject.POJO.Condamnation;
+import com.example.prisonProject.POJO.Incarceration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.util.List;
 
 @Service
 public class CondamnationServiceImpl implements CondamnationService {
@@ -39,5 +41,10 @@ public class CondamnationServiceImpl implements CondamnationService {
     public void deleteCondmanation(String nTypeDecision, String nEcrou, Date dateDecision){
         Condamnation c = condamnationRepository.findCondamnationBynEcrouAndNumTypeDecisionAndDateDecision(nEcrou,nTypeDecision,dateDecision);
         condamnationRepository.delete(c);
+    }
+
+    @Override
+    public List<Condamnation> readAllCondamnations(){
+        return condamnationRepository.findAll();
     }
 }
